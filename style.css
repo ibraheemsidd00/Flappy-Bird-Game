@@ -1,0 +1,102 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.background {
+	height: 100vh;
+	width: 100vw;
+	background: url('./background-img.png') no-repeat center center fixed;
+	background-size: cover;
+}
+
+.bird {
+	height: 10vh; /* Adjusted for responsiveness */
+	width: auto; /* Adjusted for responsiveness */
+	position: fixed;
+	top: 40vh;
+	left: 30vw;
+	z-index: 100;
+}
+
+.pipe_sprite {
+	position: fixed;
+	top: 40vh;
+	left: 100vw;
+	height: 50vh; /* Adjusted for responsiveness */
+	width: 6vw; /* Adjusted for responsiveness */
+	background: radial-gradient(lightgreen 50%, green);
+	border: 5px solid black;
+	animation: pipeMove 5s linear infinite; /* Add animation for pipe movement */
+}
+
+/* Animation for pipe movement */
+@keyframes pipeMove {
+	0% {
+		left: 100vw;
+	}
+	100% {
+		left: -6vw;
+	}
+}
+
+.message {
+	position: absolute;
+	z-index: 10;
+	color: black;
+	top: 30%;
+	left: 50%;
+	font-size: 4em;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.messageStyle {
+	background: white;
+	padding: 3vh 5vw; /* Adjusted for responsiveness */
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	border-radius: 5%;
+}
+
+.score {
+	position: fixed;
+	z-index: 10;
+	height: 10vh;
+	font-size: 10vh;
+	font-weight: 100;
+	color: white;
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: black;
+	top: 0;
+	left: 0;
+	margin: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.score_val {
+	color: gold;
+	font-weight: bold;
+}
+
+@media only screen and (max-width: 1080px) {
+	.message {
+		font-size: 50px;
+		top: 50%;
+		white-space: nowrap;
+	}
+	.score {
+		font-size: 8vh;
+	}
+	.bird {
+		height: 8vh; /* Adjusted for smaller screens */
+		width: auto; /* Adjusted for smaller screens */
+		left: 20vw; /* Adjusted for smaller screens */
+	}
+	.pipe_sprite {
+		height: 40vh; /* Adjusted for smaller screens */
+		width: 10vw; /* Adjusted for smaller screens */
+		animation-duration: 4s; /* Increase speed for smaller screens */
+	}
+}
